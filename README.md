@@ -6,4 +6,4 @@
 
 # [Also click this for a cooler project](https://studentcommunity.kaveergera.com)
 
-![](assets/ArrowConnect Icon.png)![](assets/ArrowConnect Logo.png)
+![](https://github.com/Reevak05/ArrowConnect/blob/master/assets/ArrowConnect%20Icon.png?raw=true)![](https://github.com/Reevak05/ArrowConnect/blob/master/assets/ArrowConnect%20Logo.png?raw=true)
