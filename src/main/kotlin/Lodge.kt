@@ -4,15 +4,14 @@ class Lodge(val name: String, val section: Section) {
     val arrowmen = mutableSetOf<Arrowman>()
     val calendar = mutableSetOf<Event>()
 
-    fun runCommands() {
-        val input = Scanner(System.`in`)
+    fun runCommands(input : Scanner) {
         while (true) {
-            println("Viewing: $name lodge")
+            println("\n|> Viewing: $name lodge <|")
             println("Available commands: createevent, printevents, listarrowmen, createarrowman, viewarrowman, exit")
             val command = input.nextLine()
             when (command.lowercase()) {
                 "createevent" -> {
-                    calendar.add(createEvent())
+                    calendar.add(createEvent(input))
                 }
                 "printevents" -> {
                     println("--- $name Lodge Events ---")
@@ -29,7 +28,7 @@ class Lodge(val name: String, val section: Section) {
                 }
                 "viewarrowman" -> {
                     println("Enter arrowman's name:")
-                    arrowmen.find { it.name == input.nextLine() }?.runCommands()
+                    arrowmen.find { it.name == input.nextLine() }?.runCommands(input)
                 }
                 "exit" -> {
                     break
@@ -39,6 +38,6 @@ class Lodge(val name: String, val section: Section) {
                 }
             }
         }
-        input.close()
+
     }
 }

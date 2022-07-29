@@ -4,15 +4,14 @@ class National() {
     val sections = mutableSetOf<Section>()
     val calendar = mutableSetOf<Event>()
 
-    fun runCommands() {
-        val input = Scanner(System.`in`)
+    fun runCommands(input : Scanner) {
         while (true) {
-            println("Viewing: national")
+            println("\n|> Viewing: national <|")
             println("Available commands: createevent, printevents, listsections, createsection, viewsection, exit")
             val command = input.nextLine()
             when (command.lowercase()) {
                 "createevent" -> {
-                    calendar.add(createEvent())
+                    calendar.add(createEvent(input))
                 }
                 "printevents" -> {
                     println("--- National Events ---")
@@ -29,7 +28,7 @@ class National() {
                 }
                 "viewsection" -> {
                     println("Enter section name:")
-                    sections.find { it.name == input.nextLine() }?.runCommands()
+                    sections.find { it.name == input.nextLine() }?.runCommands(input)
                 }
                 "exit" -> {
                     break
@@ -39,6 +38,5 @@ class National() {
                 }
             }
         }
-        input.close()
     }
 }
